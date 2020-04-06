@@ -1,4 +1,5 @@
 body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif, Arial;
     margin: 0px;
     background: rgba(29, 23, 23, 0.815);
 }
@@ -6,7 +7,7 @@ body {
 #grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 50px 1000px 100px;
+    grid-template-rows: 106px 50px auto 100px;
     grid-template-areas:
     "head head"
     "nav nav"
@@ -22,36 +23,80 @@ body {
     background: rgba(20, 20, 20, 0.7);
     box-shadow: 0px 10px 20px rgba(255,255,255,.1);
     z-index: 10;
+    text-align: center;
 }
+
 #content {
+    min-height: 500px;
     grid-area: contentArea;
     background: rgb(20, 20, 20);
 }
-#footer {
-    grid-area: footer;
-    background: rgba(20, 20, 20, 0.7);
+.villains {
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+    display: block;
+    
     
 }
 
-/*
+.villains:hover {
+    animation-name: borderStuff;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, 0.44, 0.84, 0.165);
+}
+
+@keyframes borderStuff {
+    0% {
+        box-shadow: 0px 0px 0px black;
+    }
+    50% {
+        box-shadow: 0px 0px 20px white;
+    }
+    100% {
+        box-shadow: 0px 0px 0px black;
+    }
+}
+
+#footer {
+    grid-area: footer;
+    background: rgba(20, 20, 20, 0.7);
+}
+
 #header h1{
-    height: 100px;
     height: 100%;
     padding-top: 6px;
-    font-size: 75px;
+    font-size: 4em;
     margin: 0px;
-    background: rgba(85, 76, 76, 0.8);
     text-align: center;
     color: white;
-    font-family: Helvetica, Arial;
 }
 
-#header a {
+#nav a {
     text-decoration: none;
+    color: white;
+    height: 100%;
+    font-size: 2em;
+    min-width: 50px;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0px 5px 0px 5px;
 }
 
-#navBar nav{
-    background: gray;
-    height: 50px;
+#nav a:hover {
+    animation-name: brighten;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
-*/
+
+@keyframes brighten {
+    from {
+        box-shadow: 0px 0px 0px gray;
+        transform: scale(1.0);
+    }
+    to {
+         box-shadow: 0px 10px 20px gray;
+         transform: scale(1.1);
+    }
+}
