@@ -32,7 +32,7 @@ body {
 }
 
 #content {
-    min-height: 1500px;
+    min-height: 500px;
     grid-area: contentArea;
     background: rgb(20, 20, 20);
 }
@@ -47,23 +47,30 @@ body {
         "leftPic mainPic rightPic"
         ". mainPic ."
         "leftButton . rightButton";
+    margin: auto;
 }
-.leftPic {
+#leftCell {
     grid-area: leftPic;
-    width: 100%;
-    height: 100%;
+}
+#mainCell {
+    grid-area: mainPic;
+}
+#rightCell {
+    grid-area: rightPic;
+}
+#leftPic, #mainPic, #rightPic {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+#leftPic {
     background-color: blue;
 }
-.mainPic {
-    grid-area: mainPic;
-    width: 100%;
-    height: 100%;
+#mainPic {
     background-color: green;
 }
-.rightPic {
-    grid-area: rightPic;
-    width: 100%;
-    height: 100%;
+#rightPic {
     background-color: red;
 }
 
