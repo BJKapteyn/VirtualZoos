@@ -36,6 +36,54 @@ body {
     grid-area: contentArea;
     background: rgb(20, 20, 20);
 }
+#carousel {
+    display: grid;
+    grid-template-columns: 200px 500px 200px;
+    grid-template-rows: 1fr 1fr 1fr 100px;
+    height: 700px;
+    width: 900px;
+    grid-template-areas:
+        ". mainPic ."
+        "leftPic mainPic rightPic"
+        ". mainPic ."
+        "leftButton . rightButton";
+}
+.leftPic {
+    grid-area: leftPic;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+.mainPic {
+    grid-area: mainPic;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+}
+.rightPic {
+    grid-area: rightPic;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+#leftButton, #rightButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 3px solid white;
+    cursor: pointer;
+    z-index: 10;
+}
+#leftButton {
+    grid-area: leftButton;
+    background-color: gray;
+}
+#rightButton {
+    grid-area: rightButton;
+    background-color: purple;
+}
+
 .villains {
     max-width: 400px;
     height: auto;
