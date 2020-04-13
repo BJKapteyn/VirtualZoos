@@ -1,6 +1,7 @@
 let navBar = document.getElementById('nav');
 let navBarOffsetTop = navBar.offsetTop;
 
+
 let buttons = {
     previousButton: document.getElementById('leftButton'),
     nextButton: document.getElementById('rightButton')
@@ -12,12 +13,16 @@ let carouselCells = {
     rightCell: document.getElementById('rightPic')
 };
 
-buttons.previousButton.addEventListener('click', function() {
+buttons.previousButton.addEventListener('click', previousPicture);
+buttons.nextButton.addEventListener('click', nextPicture);
+carouselCells.leftCell.addEventListener('click', previousPicture);
+carouselCells.rightCell.addEventListener('click', nextPicture);
+
+function previousPicture() {
     let leftCellSrc = carouselCells.leftCell.src;
     let mainCellSrc = carouselCells.mainCell.src;
     let rightCellSrc = carouselCells.rightCell.src;
 
-    debugger;
     let indexOfLeftCell = pictureArray.indexOf(leftCellSrc);
     let indexOfMainCell = pictureArray.indexOf(mainCellSrc);
     let indexOfRightCell = pictureArray.indexOf(rightCellSrc);
@@ -43,14 +48,13 @@ buttons.previousButton.addEventListener('click', function() {
     carouselCells.leftCell.src = pictureArray[indexOfLeftCell];
     carouselCells.mainCell.src = pictureArray[indexOfMainCell];
     carouselCells.rightCell.src = pictureArray[indexOfRightCell];
-});
+}
 
-buttons.nextButton.addEventListener('click', function() {
+function nextPicture() {
     let leftCellSrc = carouselCells.leftCell.src;
     let mainCellSrc = carouselCells.mainCell.src;
     let rightCellSrc = carouselCells.rightCell.src;
 
-    debugger;
     let indexOfLeftCell = pictureArray.indexOf(leftCellSrc);
     let indexOfMainCell = pictureArray.indexOf(mainCellSrc);
     let indexOfRightCell = pictureArray.indexOf(rightCellSrc);
@@ -76,12 +80,7 @@ buttons.nextButton.addEventListener('click', function() {
     carouselCells.leftCell.src = pictureArray[indexOfLeftCell];
     carouselCells.mainCell.src = pictureArray[indexOfMainCell];
     carouselCells.rightCell.src = pictureArray[indexOfRightCell];
-});
-
-function nextPicture() {
-    
 }
-
 
 let pictureArray = [
     'file:///D:/Side%20projects/VirtualZoos/pics/Beast_Wellington_FLATCROP.jpg',
@@ -94,34 +93,8 @@ let pictureArray = [
     'file:///D:/Side%20projects/VirtualZoos/pics/S_Word_FLATCROP.jpg'
 ];
 
-
-
-(function () {
-    let date = new Date();
-    let year = date.getFullYear();
-
-    let copyright = document.getElementById('copyright');
-
-    copyright.innerText = year;
-
-    console.log("hey there");
-})();
-
 window.onload = function() {
     carouselCells.leftCell.src = pictureArray[0];
     carouselCells.mainCell.src = pictureArray[1];
     carouselCells.rightCell.src = pictureArray[2];
 }
-
-window.onscroll = function() {
-    this.sticky();
-}
-
-function sticky() {
-    if(window.pageYOffset >= navBarOffsetTop){
-        navBar.classList.add("navStick");
-    } else {
-        navBar.classList.remove("navStick");
-    }
-    
-};

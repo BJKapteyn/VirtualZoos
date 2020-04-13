@@ -2,6 +2,7 @@ body {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif, Arial;
     margin: 0px;
     background: rgba(29, 23, 23, 0.815);
+    color: white;
 }
 
 #grid {
@@ -36,6 +37,8 @@ body {
     grid-area: contentArea;
     background: rgb(20, 20, 20);
 }
+
+/*----------------------------------------CAROUSEL--------------------------------------*/
 #carousel {
     display: grid;
     grid-template-columns: 200px 500px 200px;
@@ -50,12 +53,14 @@ body {
     margin: auto;
 }
 #leftCell {
+    cursor: pointer;
     grid-area: leftPic;
 }
 #mainCell {
     grid-area: mainPic;
 }
 #rightCell {
+    cursor: pointer;
     grid-area: rightPic;
 }
 #leftPic, #mainPic, #rightPic {
@@ -90,7 +95,27 @@ body {
     grid-area: rightButton;
     background-color: purple;
 }
+/*----------------------------END CAROUSEL--------------------------------------*/
 
+/*----------------------------Container-----------------------------------------*/
+.container {
+    margin: 20px;
+    width: 500px;
+    height: auto;
+    box-shadow: 0px 0px 20px gray;
+    border: 2px dotted rgba(255,255,255,.1);
+    text-align: center;
+}
+
+.container h1 {
+    width: 100%;
+    background-color: rgba(255,255,255,.2)
+}
+
+.container p {
+    margin: 10px;
+}
+/*----------------------------END Container--------------------------------------*/
 .villains {
     max-width: 400px;
     height: auto;
