@@ -5,41 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Zoos</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    
 </head>
 <body>
     <div id="grid">
         <div id="header">
             <h1>Virtual Zoo</h1>
         </div>
-
         <div id="nav">
             <a href="index.html">Home</a>
-            <a href="peersonal.html">Villain's Peersonal lives</a>
+            <a href="index.html">Mysterious Backstories</a>
         </div>
-
         <div id="content">
-            <div id="carousel">
-                <div id="leftCell">
-                    <img src="" id="leftPic" />
-                </div>
-                <div id="mainCell">
-                    <img src="" id="mainPic" />
-                </div>
-                <div id="rightCell">
-                    <img src="" id="rightPic" />
-                </div>
-                <div id="leftButton">Previous</div>
-                <div id="rightButton">Next</div>
+            <div id="comments">
+                
+                <p id="newestComment"></p>
+                <textarea rows="4" cols="50" id="textArea"></textarea>
+                <span id="submitButton">Submit</span>
             </div>
         </div>
-        
         <div id="footer">
             <span>Copyright</span>
             <span id="copyright">C</span>
         </div>
     </div>
+    <script src="comment.js"></script>
     <script src="onload.js"></script>
-    <script src="ourawesomejs.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
-window.onscroll = function() {
-    this.sticky();
-}
+let navBar = document.getElementById('nav');
+let navBarOffsetTop = navBar.offsetTop;
 
 function sticky() {
     if(window.pageYOffset >= navBarOffsetTop){
@@ -8,14 +7,7 @@ function sticky() {
     } else {
         navBar.classList.remove("navStick");
     }
-};
-
-(function () {
-    let date = new Date();
-    let year = date.getFullYear();
-    let copyright = document.getElementById('copyright');
-
-    copyright.innerText = year;
-
-    console.log("hey there");
-})();
+}
+window.onscroll = function() {
+    sticky();
+}
